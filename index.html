@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IronFit Gym - The premier fitness destination. Power Black minimal aesthetic.">
+    <title>Anjali Gym & Yoga 2.O | Best Gym in Asansol Burnpur</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+
+        <!-- Full Bleed Hero, Left Aligned -->
+        <section class="hero parallax scroll-fade visible"
+            style="background: linear-gradient(to right, rgba(13,13,13,0.95) 20%, rgba(13,13,13,0.4) 100%), url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&q=80&w=1600') center/cover;">
+            <div class="container" style="text-align: left; padding-top: 15vh;">
+                <p class="eyebrow" style="color: var(--accent-primary); font-family: var(--font-body); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1rem;">Burnpur's Best Gym — Est. 2024</p>
+                <h1 style="font-size: clamp(52px, 8vw, 96px); font-weight: 900; line-height: 0.95; margin-bottom: 1.5rem;">Train Hard.<br>Live Strong.</h1>
+                <p style="font-size: clamp(16px, 2vw, 20px); max-width: 600px; color: #888; margin-bottom: 3rem;">Rated 4.8 / 5 on Google. The ultimate destination in Asansol for physical, mental, and spiritual growth with the latest machines and expert guidance.</p>
+                
+                <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 4rem;">
+                    <button class="btn btn-primary" onclick="openTrialModal(event)" style="background: var(--accent-primary); color: white; border: none;">Start Free Trial</button>
+                    <a href="membership.html" class="btn btn-outline">View Plans</a>
+                </div>
+                
+                <!-- Stats bar -->
+                <div class="hero-stats" style="display: flex; gap: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2.5rem; color: #bbb; font-weight: 500; font-size: 0.95rem; flex-wrap: wrap; font-family: var(--font-body);">
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                        4.8★ Rating
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                        500+ Members
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        5AM–10PM
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12"></path><rect x="3" y="16" width="18" height="6" rx="2"></rect><path d="M12 4v4"></path></svg>
+                        Steam Bath
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Infinite Marquee Animation -->
+        <div class="marquee-container scroll-fade visible">
+            <div class="marquee-content">
+                <div class="marquee-group">
+                    <span>ANJALI GYM & YOGA 2.O</span><span class="text-accent">*</span>
+                    <span>YOGA & ZUMBA</span><span class="text-accent">*</span>
+                    <span>STEAM BATH & CROSSFIT</span><span class="text-accent">*</span>
+                    <span>RATED 4.8/5 BY GOOGLE</span><span class="text-accent">*</span>
+                    <span>+91 86173 32876</span><span class="text-accent">*</span>
+                    <span>BURNPUR, ASANSOL</span><span class="text-accent">*</span>
+                </div>
+                <!-- Duplicate group for seamless infinite loop -->
+                <div class="marquee-group" aria-hidden="true">
+                    <span>ANJALI GYM & YOGA 2.O</span><span class="text-accent">*</span>
+                    <span>YOGA & ZUMBA</span><span class="text-accent">*</span>
+                    <span>STEAM BATH & CROSSFIT</span><span class="text-accent">*</span>
+                    <span>RATED 4.8/5 BY GOOGLE</span><span class="text-accent">*</span>
+                    <span>+91 86173 32876</span><span class="text-accent">*</span>
+                    <span>BURNPUR, ASANSOL</span><span class="text-accent">*</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Services Grid Section -->
+        <section class="section scroll-fade">
+            <div class="container">
+                <div style="text-align: left; max-width: 600px;">
+                    <h2>Premium <span class="text-accent">Facilities.</span></h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-top: 1rem;">Experience world-class equipment and dedicated zones tailored for every aspect of your fitness journey in Asansol.</p>
+                </div>
+                
+                <div class="service-grid">
+                    <!-- 1. Weight Training -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h12"></path><path d="M6 14h12"></path><path d="M6 10h12"></path></svg>
+                        <h3>Weight Training</h3>
+                        <p>Full equipment gym floor with modern machines, competition barbells, and free weights.</p>
+                        <a href="services.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                    
+                    <!-- 2. Yoga Classes -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6z"></path></svg>
+                        <h3>Yoga Classes</h3>
+                        <p>Morning and evening batch, all skill levels. Improve flexibility, core endurance, and mindfulness.</p>
+                        <a href="schedule.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                    
+                    <!-- 3. Zumba / Cardio -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                        <h3>Zumba / Cardio</h3>
+                        <p>High energy group classes and a massive array of treadmills, rowers, and dynamic cardio machines.</p>
+                        <a href="schedule.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                    
+                    <!-- 4. Steam Bath -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 16V4a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12"></path><rect x="3" y="16" width="18" height="6" rx="2"></rect><path d="M12 4v4"></path></svg>
+                        <h3>Steam Bath</h3>
+                        <p>Post-workout recovery steam facility. Reduce muscle soreness and detoxify your body immediately.</p>
+                        <a href="services.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                    
+                    <!-- 5. Personal Training -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"></circle><path d="M20 21a8 8 0 1 0-16 0"></path></svg>
+                        <h3>Personal Training</h3>
+                        <p>1-on-1 sessions with expert trainers. Custom regimes dictated by biomechanical science and raw data.</p>
+                        <a href="contact.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                    
+                    <!-- 6. Unisex Facility -->
+                    <div class="modern-card">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg>
+                        <h3>Unisex Facility</h3>
+                        <p>Separate floors for men and women. Train with complete comfort, privacy, and dedicated equipment zones.</p>
+                        <a href="about.html" class="card-link">Explore &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Bento Gallery Section -->
+        <section class="section scroll-fade" style="background: var(--bg-secondary);">
+            <div class="container">
+                <div style="text-align: center; margin-bottom: 3rem;">
+                    <h2>Inside Anjali Gym & Yoga <span class="text-accent">2.O</span></h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin-top: 1rem;">Real gym. Real results.</p>
+                </div>
+                
+                <div class="bento-gallery">
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800" loading="lazy" alt="Main Gym Floor">
+                        <div class="bento-overlay">The Floor</div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=600" loading="lazy" alt="Weightlifting">
+                        <div class="bento-overlay">Free Weights</div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=600" loading="lazy" alt="Yoga Studio">
+                        <div class="bento-overlay">Yoga Studio</div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=600" loading="lazy" alt="Cardio Zone">
+                        <div class="bento-overlay">Cardio Zone</div>
+                    </div>
+                    <div class="bento-item">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=600" loading="lazy" alt="Steam Bath">
+                        <div class="bento-overlay">Steam Bath</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Animated Statistics Section -->
+        <section class="section scroll-fade">
+            <div class="container">
+                <div class="stats-grid">
+                    <div>
+                        <animated-counter end="15" suffix="+"></animated-counter>
+                        <span class="stat-label">Years Forging Elite Athletes</span>
+                    </div>
+                    <div>
+                        <animated-counter end="500" suffix="k"></animated-counter>
+                        <span class="stat-label">Pounds of Raw Iron</span>
+                    </div>
+                    <div>
+                        <animated-counter end="24" suffix="/7"></animated-counter>
+                        <span class="stat-label">Hours of Unrestricted Access</span>
+                    </div>
+                    <div>
+                        <animated-counter end="12" suffix=""></animated-counter>
+                        <span class="stat-label">World-Class Power Coaches</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Asymmetric Section 2 (Reverse) -->
+        <section class="section scroll-fade" style="background: var(--bg-secondary);">
+            <div class="container split-section reverse">
+                <!-- Using inline grid forcing for desktop reverse -->
+                <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800"
+                    class="split-image" loading="lazy" alt="Athletes lifting heavy weights" style="grid-column: 1;">
+                <div class="split-content" style="grid-column: 2;">
+                    <h2>Elite <span class="text-accent">Coaching.</span></h2>
+                    <p style="font-size: 1.1rem; color: var(--text-secondary); margin: 2rem 0;">Our coaches are
+                        competitive athletes first. They understand the mechanics of breaking plateaus and commanding
+                        peak performance. Receive programming that demands results.</p>
+                    <a href="services.html" class="btn btn-primary">Train With Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trial Modal -->
+        <div id="trial-modal"
+            style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:2000; align-items:center; justify-content:center; backdrop-filter: blur(10px);">
+            <div class="card" style="max-width: 500px; width: 90%; position: relative;">
+                <button onclick="closeTrialModal()"
+                    style="position:absolute; right:20px; top:20px; background:none; border:none; color:white; font-size:2rem; cursor:pointer;">&times;</button>
+                <h3 style="margin-bottom:1.5rem; font-size:2rem;">Claim Your <span class="text-accent">Pass</span></h3>
+                <form onsubmit="event.preventDefault(); alert('Pass Requested.'); closeTrialModal();"
+                    style="display:flex; flex-direction:column; gap:1.5rem;">
+                    <input type="text" placeholder="Full Name" required
+                        style="padding:1rem; background:rgba(255,255,255,0.05); border:1px solid var(--text-secondary); color:white;">
+                    <input type="email" placeholder="Email Address" required
+                        style="padding:1rem; background:rgba(255,255,255,0.05); border:1px solid var(--text-secondary); color:white;">
+                    <button type="submit" class="btn btn-primary" style="justify-content:center;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+
+    <script src="components.js"></script>
+    <script>
+        function openTrialModal(e) {
+            e.preventDefault();
+            document.getElementById('trial-modal').style.display = 'flex';
+        }
+        function closeTrialModal() {
+            document.getElementById('trial-modal').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

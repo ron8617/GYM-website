@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | IronFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: left; }
+        .reviews-grid { display: flex; flex-direction: column; gap: 6rem; }
+        .review-card { position: relative; max-width: 900px; }
+        .review-card:nth-child(even) { align-self: flex-end; text-align: right; }
+        .review-card:nth-child(even) .reviewer { flex-direction: row-reverse; }
+        .quote-icon { font-family: var(--font-heading); font-size: 8rem; color: var(--accent-primary); position: absolute; top: -60px; left: -20px; opacity: 0.2; line-height: 1; pointer-events: none; }
+        .review-card:nth-child(even) .quote-icon { left: auto; right: -20px; }
+        .review-text { font-family: var(--font-heading); font-style: italic; font-weight: 900; font-size: 2.5rem; line-height: 1.1; margin-bottom: 2rem; position: relative; z-index: 1; }
+        .reviewer { display: flex; align-items: center; gap: 1.5rem; }
+        .reviewer img { width: 80px; height: 80px; object-fit: cover; filter: grayscale(100%); }
+        .reviewer h4 { font-family: var(--font-body); font-style: normal; font-size: 1.2rem; margin: 0; color: var(--text-primary); letter-spacing: 1px; text-transform: uppercase; }
+        .reviewer span { color: var(--text-secondary); }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+        
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <h1>Blood & <span class="text-accent">Sweat.</span></h1>
+            </div>
+        </header>
+
+        <section class="section scroll-fade">
+            <div class="container reviews-grid">
+                
+                <div class="review-card">
+                    <span class="quote-icon">"</span>
+                    <p class="review-text">Best gym in Asansol Burnpur. Plenty of space with latest machines. Trainers are very supportive and friendly. Steam bath facility also available.</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150" alt="Reviewer">
+                        <div>
+                            <h4>Arjun S.</h4>
+                            <span style="color: #fbbc04;">★★★★★ (Google Review)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <span class="quote-icon">"</span>
+                    <p class="review-text">Best gym around the city. Latest equipment and membership fees very reasonable.</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=150" alt="Reviewer">
+                        <div>
+                            <h4>Rohan D.</h4>
+                            <span style="color: #fbbc04;">★★★★★ (Google Review)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <span class="quote-icon">"</span>
+                    <p class="review-text">Best gym for Physical, Mental and Spiritual growth of an individual.</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=150" alt="Reviewer">
+                        <div>
+                            <h4>Sneha M.</h4>
+                            <span style="color: #fbbc04;">★★★★★ (Google Review)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="review-card">
+                    <span class="quote-icon">"</span>
+                    <p class="review-text">Sourav Sir is the best trainer ever.</p>
+                    <div class="reviewer">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150" alt="Reviewer">
+                        <div>
+                            <h4>Karan V.</h4>
+                            <span style="color: #fbbc04;">★★★★★ (Google Review)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+</body>
+</html>

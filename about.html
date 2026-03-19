@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Anjali Gym & Yoga 2.O</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: left; }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+        
+        <header class="page-header parallax scroll-fade visible">
+            <div class="container">
+                <h1 style="max-width: 800px;">Our <span class="text-accent">Story.</span></h1>
+            </div>
+        </header>
+
+        <section class="section scroll-fade">
+            <div class="container" style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                <div class="scroll-fade visible">
+                    <h2 class="section-title">Established in <span class="text-accent">Asansol.</span></h2>
+                    <p style="margin-bottom: 1rem; color: var(--text-secondary);">Anjali Gym & Yoga 2.O is widely recognized as the best gym around Burnpur city. We offer an abundance of space with the latest modern machines specifically tuned for physical, mental, and spiritual growth.</p>
+                    <p style="color: var(--text-secondary);">Our facility features dedicated Yoga & Zumba spaces, a massive CrossFit section, and a Steam Bath for post-workout recovery. You can even enjoy our open outdoor space for football and cricket right inside the premises!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coaches Section -->
+        <section class="section scroll-fade" style="background: var(--bg-secondary);">
+            <div class="container">
+                <h2 class="section-title" style="text-align: right; margin-bottom: 4rem;">Elite <span class="text-accent">Leadership.</span></h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;">
+                    
+                    <div class="card profile-card" style="text-align: center;">
+                        <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&q=80" alt="Sourav Sir" style="width: 250px; height: 350px; border-radius: 4px; object-fit: cover; margin: -50px auto 1rem; border-bottom: 3px solid var(--accent-primary);">
+                        <h3 style="font-size: 2.5rem; font-style: normal;">Sourav Sir</h3>
+                        <p class="text-accent" style="margin-bottom: 1rem; font-weight: 600; text-transform: uppercase;">Head Trainer & Founder</p>
+                        <p style="color: var(--text-secondary);">"Sourav Sir is the best trainer ever." As highly praised by countless members, his unparalleled expertise in physical and mental conditioning has transformed lives across Asansol. His focus ensures form, intensity, and results.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Checkout | IronFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1599058917212-d750089bc07e?auto=format&fit=crop&q=80') center/cover; padding: 200px 0 80px; text-align: left; }
+        .checkout-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+        @media (max-width: 992px) { .checkout-grid { grid-template-columns: 1fr; } }
+        .order-summary { background: var(--bg-tertiary); padding: 3rem; border: 1px solid var(--glass-border); position: relative; }
+        .payment-action { padding: 3rem; background: var(--bg-secondary); border: 1px solid var(--glass-border); text-align: center; }
+        #success-modal, #failure-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 3000; align-items: center; justify-content: center; backdrop-filter: blur(10px); }
+        .modal-content { text-align: center; max-width: 500px; width: 90%; padding: 4rem; background: var(--bg-tertiary); border: 1px solid var(--glass-border); }
+        .modal-content.success { border-color: #25D366; }
+        .modal-content.failure { border-color: var(--accent-primary); }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <h1 style="font-size: clamp(40px, 6vw, 80px);">Initiate<br><span class="text-accent">Protocol.</span></h1>
+            </div>
+        </header>
+
+        <section class="section" style="padding-top: 60px;">
+            <div class="container checkout-grid">
+                
+                <!-- Order Summary -->
+                <div class="order-summary scroll-fade visible">
+                    <h3 style="font-size: 1.5rem; margin-bottom: 2rem; font-style: normal;">Order Summary</h3>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border);">
+                        <span style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Plan Selected</span>
+                        <strong id="summary-plan-name" style="font-weight: 600; font-size: 1.2rem; color: var(--text-primary); text-transform: uppercase;">PRO PLAN</strong>
+                    </div>
+                    <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid var(--glass-border);">
+                        <span style="color: var(--text-secondary); text-transform: uppercase; letter-spacing: 1px;">Billing Cycle</span>
+                        <strong style="font-weight: 600; color: var(--text-primary);">Monthly</strong>
+                    </div>
+                    <div style="margin-top: 2rem; display: flex; flex-direction: column;">
+                        <span style="color: var(--text-secondary); font-size: 0.9rem; text-transform: uppercase;">Total Due Immediately</span>
+                        <div style="font-size: 3.5rem; font-family: var(--font-heading); font-weight: 900; font-style: italic; line-height: 1; margin-top: 0.5rem;" class="text-accent" id="summary-price">₹1799</div>
+                    </div>
+                </div>
+
+                <!-- Payment Bridge -->
+                <div class="payment-action scroll-fade visible">
+                    <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Secure <span class="text-accent">Gateway.</span></h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 3rem;">Review your order details. Once confirmed, you will be redirected to the Razorpay secure environment to strictly process your induction.</p>
+                    <button id="pay-btn" class="btn btn-primary" style="width: 100%; justify-content: center; font-size: 1.2rem; padding: 1.5rem;">Confirm & Pay</button>
+                    <div style="margin-top: 2rem; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+                        <span style="display: flex; gap: 10px; align-items: center; color: var(--text-secondary); font-size: 0.85rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> UPI </span>
+                        <span style="display: flex; gap: 10px; align-items: center; color: var(--text-secondary); font-size: 0.85rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"></rect><line x1="1" y1="10" x2="23" y2="10"></line></svg> Cards </span>
+                        <span style="display: flex; gap: 10px; align-items: center; color: var(--text-secondary); font-size: 0.85rem;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg> Net Banking</span>
+                    </div>
+                    <img src="https://razorpay.com/build/browser/static/razorpay-logo.5cdb58df.svg" alt="Razorpay Secured" height="20" style="margin-top: 1.5rem; filter: invert(100%); opacity: 0.3;">
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div id="success-modal">
+            <div class="modal-content success">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem; line-height: 1; color: #25D366;">Access <span style="color: white;">Granted.</span></h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 1rem;">Payment was authenticated automatically. Welcome to the elite roster.</p>
+                <div style="background: rgba(255,255,255,0.05); padding: 1rem; margin-bottom: 2rem; border-radius: 4px;">
+                    <span style="color: var(--text-secondary); font-size: 0.9rem;">TRANSACTION ID</span><br>
+                    <strong style="color: #fff; font-family: monospace; font-size: 1.1rem;" id="payment-id">RZP_XXX</strong>
+                </div>
+                <a href="index.html" class="btn btn-primary" style="background: #25D366; color: #000; width: 100%; justify-content: center;">Enter Basecamp</a>
+            </div>
+        </div>
+
+        <!-- Failure Modal -->
+        <div id="failure-modal">
+            <div class="modal-content failure">
+                <h2 style="font-size: 3rem; margin-bottom: 1rem; line-height: 1;" class="text-accent">Transaction <span style="color: white;">Failed.</span></h2>
+                <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 2.5rem;">The gateway rejected the transaction payload. Do not retreat, attempt again.</p>
+                <button onclick="document.getElementById('failure-modal').style.display = 'none'" class="btn btn-outline" style="width: 100%; justify-content: center;">Retry Payment</button>
+            </div>
+        </div>
+
+    </main>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        const plans = {
+            '1month': { name: '1 Month Basic', price: 800 },
+            '3months': { name: '3 Months Standard', price: 1800 },
+            '6months': { name: '6 Months Pro', price: 3000 }
+        };
+
+        const urlParams = new URLSearchParams(window.location.search);
+        let currentPlanKey = urlParams.get('plan') || '1month';
+        if (!plans[currentPlanKey]) currentPlanKey = '1month';
+        
+        const currentPlan = plans[currentPlanKey];
+
+        document.getElementById('summary-plan-name').textContent = currentPlan.name;
+        document.getElementById('summary-price').textContent = '₹' + currentPlan.price;
+
+        document.getElementById('pay-btn').addEventListener('click', function(e){
+            e.preventDefault();
+            
+            var options = {
+                "key": "rzp_test_SSwqmfZ4B4hRKE", // Utilizing User's Real Test Key
+                "amount": currentPlan.price * 100, // Amount in paise
+                "currency": "INR",
+                "name": "Anjali Gym & Yoga 2.O",
+                "description": "Subscription: " + currentPlan.name,
+                "handler": function (response){
+                    // Success callback
+                    document.getElementById('success-modal').style.display = 'flex';
+                    document.getElementById('payment-id').textContent = response.razorpay_payment_id;
+                },
+                "modal": {
+                    "ondismiss": function() {
+                        // User closed the popup
+                        window.location.href = 'membership.html';
+                    }
+                },
+                "theme": {
+                    "color": "#FF4500" // Matches our Power Black Theme
+                }
+            };
+            
+            var rzp1 = new Razorpay(options);
+            
+            rzp1.on('payment.failed', function (response){
+                // Failure callback
+                document.getElementById('failure-modal').style.display = 'flex';
+                console.error("Razorpay Error:", response.error.code, response.error.description);
+            });
+            
+            rzp1.open();
+        });
+    </script>
+</body>
+</html>

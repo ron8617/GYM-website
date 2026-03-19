@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership | IronFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1593079831268-3381b0c42369?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: left; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 3rem; margin-top: 5rem; align-items: start; }
+        .price-card { padding: 4rem 3rem; position: relative; }
+        /* Asymmetric lift on the popular card via margin */
+        .price-card.popular { margin-top: -3rem; border-color: var(--accent-primary); }
+        .price-card.popular::before { content: 'ELITE CHOICE'; position: absolute; top: 0; left: 0; width: 100%; background: var(--accent-primary); color: white; padding: 0.75rem 0; font-family: var(--font-body); font-weight: 700; letter-spacing: 3px; text-align: center; }
+        .price { font-size: 5rem; font-family: var(--font-heading); font-style: italic; font-weight: 900; margin: 2rem 0; line-height: 0.9; }
+        .price span { font-size: 1.5rem; color: var(--text-secondary); font-family: var(--font-body); font-style: normal; font-weight: 400; }
+        .features-list { margin: 3rem 0; }
+        .features-list li { margin-bottom: 1rem; border-bottom: 1px solid var(--glass-border); padding-bottom: 1rem; color: var(--text-secondary); display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+        
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <h1>Commitment.</h1>
+            </div>
+        </header>
+
+        <section class="section scroll-fade">
+            <div class="container">
+                <div class="split-section" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div style="max-width: 600px;">
+                        <h2>Select Your <span class="text-accent">Tier.</span></h2>
+                        <p style="color: var(--text-secondary); font-size: 1.1rem; margin-top: 1.5rem;">No hidden fees. No compromises. Gain access to the ultimate training environment.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-grid">
+                    <!-- Basic -->
+                    <div class="card price-card">
+                        <h3 style="font-size: 2rem; font-style: normal;">1 Month Basic</h3>
+                        <div class="price" style="font-size: 4rem;">₹800</div>
+                        <ul class="features-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Ground/1st Floor Unrestricted</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Basic Cardio Access</li>
+                        </ul>
+                        <a href="billing.html?plan=1month" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Plan</a>
+                    </div>
+
+                    <!-- Standard -->
+                    <div class="card price-card popular">
+                        <h3 class="text-accent" style="font-size: 2rem; font-style: normal;">3 Months Standard</h3>
+                        <div class="price" style="font-size: 4rem;">₹1800</div>
+                        <ul class="features-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> All Basic Features</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Cardio + CrossFit Section</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Yoga + Zumba Classes</li>
+                        </ul>
+                        <a href="billing.html?plan=3months" class="btn btn-primary" style="width: 100%; justify-content: center;">Select Plan</a>
+                    </div>
+                    
+                    <!-- Pro -->
+                    <div class="card price-card">
+                        <h3 style="font-size: 2rem; font-style: normal;">6 Months Pro</h3>
+                        <div class="price" style="font-size: 4rem;">₹3000</div>
+                        <ul class="features-list">
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> All Standard Features</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Steam Bath Facility</li>
+                            <li><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent"><polyline points="20 6 9 17 4 12"></polyline></svg> Dedicated Outdoor Area</li>
+                        </ul>
+                        <a href="billing.html?plan=6months" class="btn btn-outline" style="width: 100%; justify-content: center;">Select Plan</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact IronFit gym.">
+    <title>Contact Us | IronFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: left; }
+        
+        .contact-info h3 { font-family: var(--font-body); font-style: normal; font-size: 1.25rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 0.5rem; }
+        .contact-info p { font-size: 1.2rem; margin-bottom: 3rem; }
+        
+        input, select, textarea { width: 100%; padding: 1.25rem 0; background: transparent; border: none; border-bottom: 1px solid var(--text-secondary); color: var(--text-primary); font-family: inherit; font-size: 1.1rem; transition: border-color 0.3s; margin-bottom: 2rem; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent-primary); }
+        textarea { resize: vertical; min-height: 150px; }
+        
+        .map-section { width: 100%; height: 500px; border-radius: 8px; margin-top: 4rem; filter: grayscale(30%) contrast(110%); }
+    </style>
+    <!-- EmailJS CDN & Initialization -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        (function() {
+            // Public Key Injection
+            emailjs.init("jbfU-2YHcsBXZ4h-b");
+        })();
+    </script>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <h1>Report<br>For <span class="text-accent">Duty.</span></h1>
+            </div>
+        </header>
+
+        <section class="section scroll-fade">
+            <div class="container split-section">
+                
+                <div class="contact-info">
+                    <h3>Headquarters</h3>
+                    <p>Newtown, Near CISF Barrack<br>IISCO Steel Plant, Burnpur<br>Asansol, West Bengal 713326</p>
+                    
+                    <h3>Comms</h3>
+                    <p>+91 86173 32876<br>+91 76024 76888</p>
+                    
+                    <h3>Operations</h3>
+                    <p>Mon - Sat: 5:00 AM - 10:00 PM<br>Sunday: Closed</p>
+                </div>
+
+                <div class="contact-form">
+                    <!-- Error Banner -->
+                    <div id="emailError" style="display: none; background: #8B0000; color: white; padding: 14px; margin-bottom: 20px; text-align: center; border-radius: 4px; font-weight: 600;">
+                        Failed to send. Call us: +91 79083 18034
+                    </div>
+                    
+                    <!-- Success Card -->
+                    <div id="emailSuccess" style="display: none; text-align: center; padding: 40px; background: #111; border: 1px solid #1f1f1f; border-radius: 8px;">
+                        <svg viewBox="0 0 24 24" style="width: 64px; height: 64px; stroke: #22c55e; fill: none; stroke-width: 2; margin-bottom: 20px;"><circle cx="12" cy="12" r="10"></circle><path d="M8 12l3 3 5-6"></path></svg>
+                        <h3 style="color: white; margin-bottom: 15px; font-size: 24px;">Message Sent!</h3>
+                        <p style="color: #888; margin-bottom: 25px; font-size: 15px;">We've received your data and sent a confirmation. We'll be in touch.</p>
+                        <button type="button" class="btn btn-outline" onclick="resetFormState()">Send Another Message</button>
+                    </div>
+
+                    <!-- Existing Form (Now with IDs) -->
+                    <form id="ironfitContact">
+                        <input type="text" id="fb_name" placeholder="Designation (Name)" required>
+                        <input type="email" id="fb_email" placeholder="Comms Link (Email)" required>
+                        <select id="fb_service" required>
+                            <option value="">Select Objective</option>
+                            <option value="membership">Membership Access</option>
+                            <option value="pt">Private Coaching</option>
+                        </select>
+                        <textarea id="fb_msg" placeholder="Directives (Message)" required></textarea>
+                        <button type="submit" id="fb_submitBtn" class="btn btn-primary">Transmit</button>
+                    </form>
+                </div>
+
+            </div>
+            
+            <!-- Google Maps iframe embedded directly underneath the contact form split section -->
+            <div class="container" style="padding-top: 2rem;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1m3!1d3655.4382582772583!2d86.9298517!3d23.6244795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39f71ff4b93478bf%3A0xc4f4477c77f0a8c2!2sBurnpur%2C%20Asansol%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" class="map-section" allowfullscreen="" loading="lazy" style="border: 1px solid var(--glass-border);"></iframe>
+            </div>
+        </section>
+
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+    
+    <!-- EmailJS Submit Handlers -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('ironfitContact');
+            const submitBtn = document.getElementById('fb_submitBtn');
+            const errorBanner = document.getElementById('emailError');
+            const successCard = document.getElementById('emailSuccess');
+
+            // EMAILJS CREDENTIALS
+            const SERVICE_ID = "service_6cqlb8m";
+            const NOTIFICATION_TEMPLATE = "contact_notification"; 
+            const AUTOREPLY_TEMPLATE = "auto_reply";     
+
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Reset Errors & Change Button text
+                errorBanner.style.display = 'none';
+                const originalText = submitBtn.textContent;
+                submitBtn.textContent = "Sending...";
+                submitBtn.disabled = true;
+
+                // Collect the Data from the fields
+                const formData = {
+                    name: document.getElementById('fb_name').value.trim(),
+                    email: document.getElementById('fb_email').value.trim(),
+                    service: document.getElementById('fb_service').value,
+                    message: document.getElementById('fb_msg').value.trim()
+                };
+
+                // Promise 1: Send Notification to Gym Owner
+                const email1 = emailjs.send(SERVICE_ID, NOTIFICATION_TEMPLATE, {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.service,
+                    message: formData.message,
+                    to_email: "your-gym-email@gmail.com" // Edit this to your actual email
+                });
+
+                // Promise 2: Send Auto-Reply to the User
+                const email2 = emailjs.send(SERVICE_ID, AUTOREPLY_TEMPLATE, {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    reply_message: "Thank you for contacting Anjali Gym & Yoga 2.O. We received your message and will reply within 24 hours. Urgent? Call: +91 79083 18034"
+                });
+
+                // Execute Both Emails Concurrently
+                Promise.all([email1, email2])
+                    .then(() => {
+                        // Success -> Hide form, show custom success message
+                        form.style.display = 'none';
+                        successCard.style.display = 'block';
+                        form.reset();
+                    })
+                    .catch((error) => {
+                        // Failure -> Show Error UI
+                        console.error("EmailJS Error:", error);
+                        errorBanner.style.display = 'block';
+                    })
+                    .finally(() => {
+                        // Re-enable the button no matter what
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+            });
+
+            // "Send Another Message" Logic
+            window.resetFormState = function() {
+                successCard.style.display = 'none';
+                errorBanner.style.display = 'none';
+                form.style.display = 'block';
+            };
+        });
+    </script>
+</body>
+</html>

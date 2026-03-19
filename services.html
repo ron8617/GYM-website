@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities | Anjali Gym & Yoga 2.O</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1554344005-4ec17eecbc92?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: left; }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 3rem;">
+                    
+                    <div class="card scroll-fade visible">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800" alt="Personal Training" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1.5rem; border-radius: 4px; border: 1px solid var(--glass-border);">
+                        <h3 style="font-size: 2rem; font-style: normal; margin-bottom: 1rem;">Personal <span class="text-accent">Training.</span></h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Led by the highly praised Sourav Sir, our one-on-one sessions guarantee rapid transformations. We assess your physical and mental baselines to construct an undefeatable programming routine.</p>
+                        <a href="contact.html" class="btn btn-outline">Book Session</a>
+                    </div>
+
+                    <div class="card scroll-fade visible" style="margin-top: 4rem;">
+                        <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800" alt="Yoga & Zumba" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1.5rem; border-radius: 4px; border: 1px solid var(--glass-border);">
+                        <h3 style="font-size: 2rem; font-style: normal; margin-bottom: 1rem;">Yoga & <span class="text-accent">Zumba.</span></h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Balance pure iron with holistic flexibility and extreme cardio bursts. Our dedicated Yoga classes foster spiritual growth, while our intense Zumba classes shred calories effortlessly.</p>
+                        <a href="schedule.html" class="btn btn-primary">Class Schedule</a>
+                    </div>
+
+                    <div class="card scroll-fade visible">
+                        <img src="https://images.unsplash.com/photo-1583416750470-965b2707b355?auto=format&fit=crop&w=800" alt="Steam Bath & CrossFit" style="width: 100%; height: 250px; object-fit: cover; margin-bottom: 1.5rem; border-radius: 4px; border: 1px solid var(--glass-border);">
+                        <h3 style="font-size: 2rem; font-style: normal; margin-bottom: 1rem;">Steam Bath & <span class="text-accent">CrossFit.</span></h3>
+                        <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Push your limits in our brutal CrossFit area, featuring abundant open space. Recover immediately after in our immersive steam bath facility—an absolute necessity for high-tier athletes.</p>
+                        <a href="membership.html" class="btn btn-outline">View Memberships</a>
+                    </div>
+                    
+                </div>
+            </div>
+        </header>
+
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+</body>
+</html>

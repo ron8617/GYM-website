@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | IronFit Gym</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .page-header { background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80') center/cover; padding: 250px 0 120px; text-align: right; }
+        .gallery-wrap { display: grid; grid-template-columns: repeat(auto-fill, minmax(400px, 1fr)); gap: 2rem; }
+        .gallery-item { position: relative; overflow: hidden; }
+        /* Asymmetric staggering */
+        .gallery-item:nth-child(even) { margin-top: 4rem; margin-bottom: -4rem; }
+        @media (max-width: 768px) { .gallery-item:nth-child(even) { margin-top: 0; margin-bottom: 0; } }
+        .gallery-item img { width: 100%; object-fit: cover; aspect-ratio: 4/5; display: block; filter: grayscale(80%); transition: filter 0.4s ease, transform 0.4s ease; }
+        .gallery-item:hover img { filter: grayscale(0%); transform: scale(1.03); }
+    </style>
+</head>
+<body>
+    <gym-navbar></gym-navbar>
+    <main>
+        <scroll-fade-controller></scroll-fade-controller>
+        
+        <header class="page-header scroll-fade visible">
+            <div class="container">
+                <h1>The <span class="text-accent">Arena.</span></h1>
+            </div>
+        </header>
+
+        <section class="section scroll-fade">
+            <div class="container">
+                <div class="gallery-wrap">
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?auto=format&fit=crop&w=800" loading="lazy" alt="Cardio Area">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=800" loading="lazy" alt="Free Weights">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=800" loading="lazy" alt="CrossFit Space">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=800" loading="lazy" alt="Heavy Lifting">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <whatsapp-button></whatsapp-button>
+    <gym-footer></gym-footer>
+    <script src="components.js"></script>
+</body>
+</html>
